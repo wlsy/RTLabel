@@ -37,6 +37,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreText/CoreText.h>
+IB_DESIGNABLE
 
 typedef enum
 {
@@ -81,17 +82,17 @@ typedef enum
 
 @interface RTLabel : UIView
 @property (nonatomic, copy) NSString *text, *plainText, *highlightedText;
-@property (nonatomic, strong) UIColor *textColor;
-@property (nonatomic, strong) UIFont *font;
+@property (nonatomic, strong) IBInspectable UIColor *textColor;
+@property (nonatomic, strong) IBInspectable UIFont *font;
 @property (nonatomic, strong) NSDictionary *linkAttributes;
 @property (nonatomic, strong) NSDictionary *selectedLinkAttributes;
 @property (nonatomic, weak) id<RTLabelDelegate> delegate;
 @property (nonatomic, copy) NSString *paragraphReplacement;
 @property (nonatomic, strong) NSMutableArray *textComponents, *highlightedTextComponents;
-@property (nonatomic, assign) RTTextAlignment textAlignment;
+@property (nonatomic, assign)  RTTextAlignment textAlignment;
 @property (nonatomic, assign) CGSize optimumSize;
 @property (nonatomic, assign) RTTextLineBreakMode lineBreakMode;
-@property (nonatomic, assign) CGFloat lineSpacing;
+@property (nonatomic, assign) IBInspectable CGFloat lineSpacing;
 @property (nonatomic, assign) NSInteger currentSelectedButtonComponentIndex;
 @property (nonatomic, assign) CFRange visibleRange;
 @property (nonatomic, assign) BOOL highlighted;
